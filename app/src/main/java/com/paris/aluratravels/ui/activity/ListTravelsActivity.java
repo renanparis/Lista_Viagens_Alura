@@ -25,7 +25,7 @@ public class ListTravelsActivity extends AppCompatActivity {
     }
 
     private void configListPackage() {
-        ListView list = findViewById(R.id.list_activity_package);
+        ListView list = findViewById(R.id.activity_list_travels_list_package);
         PackageDao dao = new PackageDao();
         List<Packages> packages = dao.list();
         list.setAdapter(new PackageListAdapter(packages, this));

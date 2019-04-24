@@ -1,7 +1,5 @@
 package com.paris.aluratravels.util;
 
-import com.paris.aluratravels.model.Packages;
-
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
