@@ -14,15 +14,20 @@ import java.util.List;
 
 public class ListTravelsActivity extends AppCompatActivity {
 
+    public static final String TITLE_APPBAR = "Pacotes";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_travels);
-        setTitle("Pacotes");
+        setTitle(TITLE_APPBAR);
+        configListPackage();
+    }
+
+    private void configListPackage() {
         ListView list = findViewById(R.id.list_activity_package);
         PackageDao dao = new PackageDao();
         List<Packages> packages = dao.list();
-
         list.setAdapter(new PackageListAdapter(packages, this));
     }
 }
