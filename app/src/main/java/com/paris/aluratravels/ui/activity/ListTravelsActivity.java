@@ -2,6 +2,7 @@ package com.paris.aluratravels.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -22,6 +23,9 @@ public class ListTravelsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_travels);
         setTitle(TITLE_APPBAR);
         configListPackage();
+
+        Intent intent = new Intent(this, ResumePackageActivity.class);
+        startActivity(intent);
     }
 
     private void configListPackage() {
