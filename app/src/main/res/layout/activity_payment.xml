@@ -105,7 +105,6 @@
         app:layout_constraintTop_toBottomOf="@id/activity_payment_cvc_credit_card"
         android:hint="@string/name_credit_card"
         android:inputType="text"
-        android:textAllCaps="true"
         android:importantForAutofill="no" tools:targetApi="o"/>
 
     <Button
