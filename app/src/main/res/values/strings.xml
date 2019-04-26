@@ -7,4 +7,7 @@
     <string name="days">2 Dias</string>
     <string name="price">R$ 243,99</string>
     <string name="Image_city">Imagem da cidade</string>
+    <string name="title_button_payment">Realizar Pagamento</string>
+    <string name="description_image_resume_packge">Imagem da ciadde do pacotede viagem</string>
+    <string name="final_price_resume_package">Preço final</string>
 </resources>

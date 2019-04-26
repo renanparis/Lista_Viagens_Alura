@@ -16,7 +16,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/description_image_resume_packge" />
 
     <TextView
         android:id="@+id/activity_resume_city_package"
@@ -41,21 +42,25 @@
 
     <TextView
         android:id="@+id/activity_resume_date_package"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         tools:text="08/12 - 10/12 de 2017"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/activity_resume_days_package"
         app:layout_constraintTop_toBottomOf="@+id/activity_resume_days_package"
+        app:layout_constraintEnd_toStartOf="@+id/activity_resume_price_package"
         android:layout_marginTop="8dp"/>
 
     <TextView
         android:id="@+id/activity_resume_price_package"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/activity_resume_date_package"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_resume_date_package"
         android:layout_marginEnd="8dp"
+        android:textAlignment="textEnd"
+        android:gravity="end"
         tools:text="R$ 243,99"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="20sp"/>
@@ -64,7 +69,7 @@
         android:id="@+id/activity_resume_final_price_package"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Preço final"
+        android:text="@string/final_price_resume_package"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/activity_resume_price_package"
         app:layout_constraintBottom_toTopOf="@+id/activity_resume_price_package"/>
@@ -79,7 +84,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="1.0"
         android:layout_margin="8dp"
-        android:text="Realizar Pagamento"
+        android:text="@string/title_button_payment"
         android:textColor="@android:color/white"
         android:background="@drawable/background_button_payment"/>
 
