@@ -19,4 +19,9 @@
     <string name="orientation_payment">Digite as informações do cartrão de crédito que você deseja usar para o pagamento</string>
     <string name="value_package">Valor da Compra</string>
     <string name="number_credit_card">Numero do Cartão</string>
+    <string name="title_banner">Parabens!</string>
+    <string name="text_banner">Compra realizada com sucesso :)</string>
+    <string name="text_purchase_resume">Confira o resumo da compra:</string>
+    <string name="content_descrption_image_banner">Imagem de fundo do banner</string>
+    <string name="content_description_image_package">Imagem do da cidade do pacote de viagem comprado</string>
 </resources>
