@@ -24,7 +24,7 @@ public class ListTravelsActivity extends AppCompatActivity {
         setTitle(TITLE_APPBAR);
         configListPackage();
 
-        Intent intent = new Intent(this, ResumePackageActivity.class);
+        Intent intent = new Intent(this, PaymentActivity.class);
         startActivity(intent);
     }
 

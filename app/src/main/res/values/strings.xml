@@ -10,4 +10,13 @@
     <string name="title_button_payment">Realizar Pagamento</string>
     <string name="description_image_resume_packge">Imagem da ciadde do pacotede viagem</string>
     <string name="final_price_resume_package">Preço final</string>
+    <string name="month_credit_card">MM</string>
+    <string name="mask_card_name">abcdefghijklmnopqrstuvwxyzçABCDEFGHIJKLMNOPQRSTUVWXYZÇ\u0020</string>
+    <string name="year_credit_card">AA</string>
+    <string name="security_code_credit_card">CVC</string>
+    <string name="name_credit_card">Nome no cartão</string>
+    <string name="finalize_purchase">Finalizar compra</string>
+    <string name="orientation_payment">Digite as informações do cartrão de crédito que você deseja usar para o pagamento</string>
+    <string name="value_package">Valor da Compra</string>
+    <string name="number_credit_card">Numero do Cartão</string>
 </resources>
