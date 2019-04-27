@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.paris.aluratravels.DAO.PackageDao;
@@ -24,8 +26,6 @@ public class ListTravelsActivity extends AppCompatActivity {
         setTitle(TITLE_APPBAR);
         configListPackage();
 
-        Intent intent = new Intent(this, PurchaseResumeActivity.class);
-        startActivity(intent);
     }
 
     private void configListPackage() {
@@ -33,5 +33,12 @@ public class ListTravelsActivity extends AppCompatActivity {
         PackageDao dao = new PackageDao();
         List<Packages> packages = dao.list();
         list.setAdapter(new PackageListAdapter(packages, this));
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(ListTravelsActivity.this, ResumePackageActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

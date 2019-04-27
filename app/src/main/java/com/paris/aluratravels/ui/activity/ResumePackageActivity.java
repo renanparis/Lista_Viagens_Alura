@@ -2,8 +2,11 @@ package com.paris.aluratravels.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,6 +39,16 @@ public class ResumePackageActivity extends AppCompatActivity {
         setDays(packageSp);
         setPrice(packageSp);
         setDate(packageSp);
+
+
+        Button paymentPackage = findViewById(R.id.activity_resume_button_payment_package);
+        paymentPackage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ResumePackageActivity.this, PaymentActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

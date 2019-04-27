@@ -2,8 +2,10 @@ package com.paris.aluratravels.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.paris.aluratravels.R;
@@ -25,6 +27,15 @@ public class PaymentActivity extends AppCompatActivity {
                 new Packages("São Paulo", "sao_paulo_sp", 2, new BigDecimal(243.99));
 
         setPrice(packageSp);
+
+        Button finalizePurhase = findViewById(R.id.activity_payment_button_finalize_payment);
+        finalizePurhase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PaymentActivity.this, PurchaseResumeActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }
