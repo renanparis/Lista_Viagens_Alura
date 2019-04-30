@@ -2,6 +2,7 @@ package com.paris.aluratravels.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.paris.aluratravels.util.FormatCurrencyUtil;
 import com.paris.aluratravels.util.ResourcerUtil;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class PurchaseResumeActivity extends AppCompatActivity {
 
@@ -26,13 +28,16 @@ public class PurchaseResumeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_purchase_resume);
         setTitle(TITLE_APPBAR);
 
-        Packages packageSp =
-                new Packages("São Paulo", "sao_paulo_sp", 2, new BigDecimal(243.99));
+        Intent intent = getIntent();
+        if (intent.hasExtra("package")){
+            Packages packages = Objects.requireNonNull(intent.getExtras()).getParcelable("package");
+            setImage(packages);
+            setCity(packages);
+            setDate(packages);
+            setPrice(packages);
+        }
 
-        setImage(packageSp);
-        setCity(packageSp);
-        setDate(packageSp);
-        setPrice(packageSp);
+
 
     }
 

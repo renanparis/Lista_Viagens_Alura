@@ -20,11 +20,11 @@ public class Packages implements Parcelable {
     }
 
 
-    protected Packages(Parcel in) {
+    private Packages(Parcel in) {
         city = in.readString();
         image = in.readString();
         days = in.readInt();
-        price = null;
+        price =  new BigDecimal(in.readString());
     }
 
     public static final Creator<Packages> CREATOR = new Creator<Packages>() {
@@ -65,5 +65,6 @@ public class Packages implements Parcelable {
         dest.writeString(city);
         dest.writeString(image);
         dest.writeInt(days);
+        dest.writeString(price.toPlainString());
     }
 }

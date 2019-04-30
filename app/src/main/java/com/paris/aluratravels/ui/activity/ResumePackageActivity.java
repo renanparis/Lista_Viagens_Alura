@@ -19,7 +19,9 @@ import com.paris.aluratravels.util.ResourcerUtil;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class ResumePackageActivity extends AppCompatActivity {
 
@@ -31,25 +33,33 @@ public class ResumePackageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resume_package);
         setTitle(TITLE_APPBAR);
 
+        Intent intent = getIntent();
+       if (intent.hasExtra("package")){
+           final Packages packages = Objects.requireNonNull(intent.getExtras()).getParcelable("package");
+           setCity(packages);
+           setImage(packages);
+           setDays(packages);
+           setPrice(packages);
+           setDate(packages);
+           configButtonPayment(packages);
+       }
 
-        Packages packageSp = new Packages("São Paulo", "sao_paulo_sp", 2, new BigDecimal(243.99));
-
-        setCity(packageSp);
-        setImage(packageSp);
-        setDays(packageSp);
-        setPrice(packageSp);
-        setDate(packageSp);
 
 
+
+
+    }
+
+    private void configButtonPayment(final Packages packages) {
         Button paymentPackage = findViewById(R.id.activity_resume_button_payment_package);
         paymentPackage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ResumePackageActivity.this, PaymentActivity.class);
+                intent.putExtra("package", packages);
                 startActivity(intent);
             }
         });
-
     }
 
     private void setDate(Packages packages) {

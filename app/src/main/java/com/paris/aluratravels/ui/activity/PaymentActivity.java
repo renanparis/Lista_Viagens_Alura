@@ -13,6 +13,7 @@ import com.paris.aluratravels.model.Packages;
 import com.paris.aluratravels.util.FormatCurrencyUtil;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class PaymentActivity extends AppCompatActivity {
 
@@ -23,21 +24,30 @@ public class PaymentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
         setTitle(TITLE_APPBAR);
-        Packages packageSp =
-                new Packages("São Paulo", "sao_paulo_sp", 2, new BigDecimal(243.99));
+        Intent intent = getIntent();
+        if (intent.hasExtra("package")){
+            final Packages packages = Objects.requireNonNull(intent.getExtras()).getParcelable("package");
+            setPrice(packages);
+            configButtonPaymentConfirm(packages);
+        }
 
-        setPrice(packageSp);
 
-        Button finalizePurhase = findViewById(R.id.activity_payment_button_finalize_payment);
-        finalizePurhase.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+    }
+
+    private void configButtonPaymentConfirm(final Packages packages) {
+        Button finalizePurchase = findViewById(R.id.activity_payment_button_finalize_payment);
+        finalizePurchase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PaymentActivity.this, PurchaseResumeActivity.class);
+                intent.putExtra("package", packages);
                 startActivity(intent);
             }
         });
-
-
     }
 
     private void setPrice(Packages packages) {
